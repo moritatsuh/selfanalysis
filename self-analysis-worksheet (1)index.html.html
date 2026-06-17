@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自己分析ミニワークシート｜価値観・強み・思考のクセを見える化する10分ワーク</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:#f7f6f3;color:#1a1a1a;min-height:100vh;padding:2rem 1rem}
+.wrap{max-width:620px;margin:0 auto}
+header{text-align:center;margin-bottom:2.5rem}
+header h1{font-size:20px;font-weight:600;color:#1a1a1a;margin-bottom:.4rem;line-height:1.4}
+header p{font-size:14px;color:#666;line-height:1.6}
+.card{background:#fff;border-radius:16px;padding:2rem 1.75rem;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.pbar{height:4px;background:#e8e6e0;border-radius:2px;margin-bottom:2rem}
+.pfill{height:4px;background:#534AB7;border-radius:2px;transition:width .4s}
+.page{display:none}
+.page.on{display:block}
+.slabel{font-size:12px;color:#999;margin-bottom:.4rem;letter-spacing:.04em}
+h2{font-size:18px;font-weight:600;color:#1a1a1a;margin-bottom:.25rem;line-height:1.4}
+.sub{font-size:14px;color:#666;margin-bottom:1.25rem;line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.25rem}
+.chip{padding:8px 14px;border:1px solid #ddd;border-radius:8px;font-size:14px;cursor:pointer;background:#fff;color:#1a1a1a;transition:all .15s;user-select:none;line-height:1.4}
+.chip:hover{background:#f0f0f0;border-color:#bbb}
+.chip.on{background:#EEEDFE;border-color:#534AB7;color:#3C3489;font-weight:500}
+.nav{display:flex;gap:10px;align-items:center;margin-top:1.5rem}
+.btn-p{background:#534AB7;color:#fff;border:none;border-radius:8px;padding:11px 24px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s}
+.btn-p:hover{background:#3C3489}
+.btn-s{background:#fff;border:1px solid #ddd;border-radius:8px;padding:11px 18px;font-size:14px;color:#666;cursor:pointer;font-family:inherit;transition:background .15s}
+.btn-s:hover{background:#f5f5f5}
+.cnt{font-size:12px;color:#999;margin-left:auto}
+.errmsg{font-size:12px;color:#c0392b;margin-top:.5rem;display:none}
+textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;color:#1a1a1a;background:#fff;resize:vertical;min-height:90px;line-height:1.6}
+textarea:focus{outline:none;border-color:#534AB7}
+.srow{display:flex;align-items:center;gap:12px;margin-bottom:.5rem}
+.srow input[type=range]{flex:1;accent-color:#534AB7}
+.sval{font-size:18px;font-weight:600;min-width:28px;text-align:center;color:#534AB7}
+.slabs{display:flex;justify-content:space-between;font-size:11px;color:#999;margin-bottom:1.5rem}
+.rs{background:#f7f6f3;border-radius:12px;padding:1rem 1.25rem;margin-bottom:.75rem}
+.rs h3{font-size:13px;font-weight:600;color:#666;margin-bottom:.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{padding:4px 10px;border-radius:6px;font-size:13px;background:#EEEDFE;color:#3C3489;font-weight:500}
+.ins{font-size:14px;color:#333;line-height:1.7;margin-top:.5rem}
+.nq{display:inline-block;background:#E1F5EE;color:#0F6E56;border-radius:8px;padding:10px 14px;font-size:14px;margin-top:.75rem;line-height:1.5;font-weight:500}
+.cta{background:#534AB7;color:#fff;border:none;border-radius:12px;padding:14px 28px;font-size:15px;font-weight:600;cursor:pointer;width:100%;margin-top:.75rem;font-family:inherit;transition:background .15s}
+.cta:hover{background:#3C3489}
+footer{text-align:center;margin-top:2rem;font-size:12px;color:#aaa}
+@media(max-width:480px){
+.card{padding:1.5rem 1.25rem}
+h2{font-size:17px}
+.chip{font-size:13px;padding:7px 11px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>自己分析ミニワークシート</h1>
+<p>価値観・強み・思考のクセ・これからの方向性を見える化する10分ワーク</p>
+</header>
+
+<div class="card">
+<div class="pbar"><div class="pfill" id="pf" style="width:12%"></div></div>
+
+<div class="page on" id="p1">
+<div class="slabel">ステップ 1 / 8</div>
+<h2>今の自分を一言で表すと？</h2>
+<p class="sub">今の状態に最も近いものを1つ選んでください。</p>
+<div class="chips" id="g1">
+<div class="chip" data-v="考えすぎて止まっている">考えすぎて止まっている</div>
+<div class="chip" data-v="次の方向性を探している">次の方向性を探している</div>
+<div class="chip" data-v="やりたいことはあるが整理中">やりたいことはあるが整理中</div>
+<div class="chip" data-v="変わりたいけれど迷っている">変わりたいけれど迷っている</div>
+<div class="chip" data-v="一度立ち止まって整えたい">一度立ち止まって整えたい</div>
+<div class="chip" data-v="新しい一歩を準備している">新しい一歩を準備している</div>
+</div>
+<div class="errmsg" id="n1">1つ選んでから次に進んでください</div>
+<div class="nav"><button class="btn-p" onclick="goNext(1)">次へ →</button></div>
+</div>
+
+<div class="page" id="p2">
+<div class="slabel">ステップ 2 / 8</div>
+<h2>大切にしたいものを5つ選んでください</h2>
+<p class="sub">価値観を直感で選んでください。</p>
+<div class="chips" id="g2">
+<div class="chip" data-v="自由">自由</div><div class="chip" data-v="安定">安定</div><div class="chip" data-v="成長">成長</div><div class="chip" data-v="挑戦">挑戦</div><div class="chip" data-v="貢献">貢献</div><div class="chip" data-v="家族">家族</div><div class="chip" data-v="健康">健康</div><div class="chip" data-v="誠実">誠実</div><div class="chip" data-v="信頼">信頼</div><div class="chip" data-v="学び">学び</div><div class="chip" data-v="創造">創造</div><div class="chip" data-v="独立">独立</div><div class="chip" data-v="仲間">仲間</div><div class="chip" data-v="影響力">影響力</div><div class="chip" data-v="楽しさ">楽しさ</div><div class="chip" data-v="経済的安心">経済的安心</div><div class="chip" data-v="専門性">専門性</div><div class="chip" data-v="人とのつながり">人とのつながり</div><div class="chip" data-v="自分らしさ">自分らしさ</div><div class="chip" data-v="静かな時間">静かな時間</div>
+</div>
+<div class="errmsg" id="n2">5つ選んでから次に進んでください</div>
+<div class="nav"><button class="btn-s" onclick="goBack(2)">← 戻る</button><button class="btn-p" onclick="goNext(2)">次へ →</button><span class="cnt" id="c2">0 / 5</span></div>
+</div>
+
+<div class="page" id="p3">
+<div class="slabel">ステップ 3 / 8</div>
+<h2>価値観の満足度</h2>
+<p class="sub">選んだ価値観は今どれくらい満たされていますか？</p>
+<div class="srow"><input type="range" min="0" max="10" value="5" step="1" id="sat" oninput="document.getElementById('sv').textContent=this.value"><span class="sval" id="sv">5</span></div>
+<div class="slabs"><span>0 まったく満たされていない</span><span>10 とても満たされている</span></div>
+<div class="nav"><button class="btn-s" onclick="goBack(3)">← 戻る</button><button class="btn-p" onclick="goNext(3)">次へ →</button></div>
+</div>
+
+<div class="page" id="p4">
+<div class="slabel">ステップ 4 / 8</div>
+<h2>自分の強みを5つ選んでください</h2>
+<p class="sub">「得意なこと」より「自然とやっていること」で選んでください。</p>
+<div class="chips" id="g4">
+<div class="chip" data-v="人の話を聞く">人の話を聞く</div><div class="chip" data-v="状況を整理する">状況を整理する</div><div class="chip" data-v="全体を俯瞰する">全体を俯瞰する</div><div class="chip" data-v="細かい点に気づく">細かい点に気づく</div><div class="chip" data-v="人を励ます">人を励ます</div><div class="chip" data-v="アイディアを出す">アイディアを出す</div><div class="chip" data-v="計画を立てる">計画を立てる</div><div class="chip" data-v="コツコツ続ける">コツコツ続ける</div><div class="chip" data-v="人と人をつなぐ">人と人をつなぐ</div><div class="chip" data-v="問題点を見つける">問題点を見つける</div><div class="chip" data-v="言葉にする">言葉にする</div><div class="chip" data-v="新しいことを学ぶ">新しいことを学ぶ</div><div class="chip" data-v="人の気持ちを察する">人の気持ちを察する</div><div class="chip" data-v="決断する">決断する</div><div class="chip" data-v="教える">教える</div><div class="chip" data-v="場を和ませる">場を和ませる</div><div class="chip" data-v="現実的に考える">現実的に考える</div><div class="chip" data-v="未来を想像する">未来を想像する</div><div class="chip" data-v="行動する">行動する</div><div class="chip" data-v="サポートする">サポートする</div>
+</div>
+<div class="errmsg" id="n4">5つ選んでから次に進んでください</div>
+<div class="nav"><button class="btn-s" onclick="goBack(4)">← 戻る</button><button class="btn-p" onclick="goNext(4)">次へ →</button><span class="cnt" id="c4">0 / 5</span></div>
+</div>
+
+<div class="page" id="p5">
+<div class="slabel">ステップ 5 / 8</div>
+<h2>自分に起きやすい思考のクセは？</h2>
+<p class="sub">当てはまるものをすべて選んでください。</p>
+<div class="chips" id="g5">
+<div class="chip" data-v="失敗したら終わりだと思う">失敗したら終わりだと思う</div><div class="chip" data-v="まだ準備不足だと思う">まだ準備不足だと思う</div><div class="chip" data-v="完璧にしてから動きたい">完璧にしてから動きたい</div><div class="chip" data-v="人にどう思われるか気になる">人にどう思われるか気になる</div><div class="chip" data-v="最悪の結果ばかり想像する">最悪の結果ばかり想像する</div><div class="chip" data-v="自分には無理だと思いやすい">自分には無理だと思いやすい</div><div class="chip" data-v="できていない点ばかり見る">できていない点ばかり見る</div><div class="chip" data-v="人と比べて落ち込む">人と比べて落ち込む</div><div class="chip" data-v="相談する前に一人で抱える">相談する前に一人で抱える</div><div class="chip" data-v="情報を集めすぎて動けない">情報を集めすぎて動けない</div><div class="chip" data-v="選択肢がないように感じる">選択肢がないように感じる</div><div class="chip" data-v="本音を後回しにする">本音を後回しにする</div>
+</div>
+<div class="nav"><button class="btn-s" onclick="goBack(5)">← 戻る</button><button class="btn-p" onclick="goNext(5)">次へ →</button></div>
+</div>
+
+<div class="page" id="p6">
+<div class="slabel">ステップ 6 / 8</div>
+<h2>増やしたい時間は？</h2>
+<p class="sub">当てはまるものをすべて選んでください。</p>
+<div class="chips" id="g6">
+<div class="chip" data-v="人と話す時間">人と話す時間</div><div class="chip" data-v="学ぶ時間">学ぶ時間</div><div class="chip" data-v="創る時間">創る時間</div><div class="chip" data-v="整える時間">整える時間</div><div class="chip" data-v="教える時間">教える時間</div><div class="chip" data-v="考える時間">考える時間</div><div class="chip" data-v="休む時間">休む時間</div><div class="chip" data-v="発信する時間">発信する時間</div><div class="chip" data-v="相談に乗る時間">相談に乗る時間</div><div class="chip" data-v="企画する時間">企画する時間</div>
+</div>
+<div class="nav"><button class="btn-s" onclick="goBack(6)">← 戻る</button><button class="btn-p" onclick="goNext(6)">次へ →</button></div>
+</div>
+
+<div class="page" id="p7">
+<div class="slabel">ステップ 7 / 8</div>
+<h2>減らしたい時間は？</h2>
+<p class="sub">当てはまるものをすべて選んでください。</p>
+<div class="chips" id="g7">
+<div class="chip" data-v="我慢する時間">我慢する時間</div><div class="chip" data-v="迷い続ける時間">迷い続ける時間</div><div class="chip" data-v="人に合わせすぎる時間">人に合わせすぎる時間</div><div class="chip" data-v="意味を感じない作業">意味を感じない作業</div><div class="chip" data-v="先延ばしする時間">先延ばしする時間</div><div class="chip" data-v="比較して落ち込む時間">比較して落ち込む時間</div><div class="chip" data-v="情報収集だけで終わる時間">情報収集だけで終わる時間</div>
+</div>
+<div class="nav"><button class="btn-s" onclick="goBack(7)">← 戻る</button><button class="btn-p" onclick="goNext(7)">次へ →</button></div>
+</div>
+
+<div class="page" id="p8">
+<div class="slabel">ステップ 8 / 8</div>
+<h2>人の役に立てそうなことは？</h2>
+<p class="sub">思いついたことを自由に書いてください。</p>
+<textarea id="ft" placeholder="例：話を聞くこと、情報を整理すること、教えること..."></textarea>
+<div class="nav" style="margin-top:1rem"><button class="btn-s" onclick="goBack(8)">← 戻る</button><button class="btn-p" onclick="showResult()">結果を見る →</button></div>
+</div>
+
+<div class="page" id="pr">
+<div style="margin-bottom:1.5rem">
+<div style="font-size:12px;color:#999;margin-bottom:.3rem">自己分析ミニワーク 結果</div>
+<h2 style="margin-bottom:.3rem">あなたの自己分析メモ</h2>
+<p class="sub" id="rstate"></p>
+</div>
+<div class="rs"><h3>大切にしたい価値観</h3><div class="tags" id="rv"></div><p class="ins" id="rvi"></p></div>
+<div class="rs"><h3>あなたの強み</h3><div class="tags" id="rs2"></div><p class="ins" id="rsi"></p></div>
+<div class="rs"><h3>思考のクセと変える問い</h3><div class="tags" id="rh"></div><div class="nq" id="rnq"></div></div>
+<div class="rs"><h3>これからの方向性</h3><p class="ins" id="rd"></p></div>
+<div style="margin-top:1.5rem;padding:1.25rem;background:#f0eef8;border-radius:12px;text-align:center">
+<p style="font-size:14px;color:#534AB7;font-weight:600;margin-bottom:.3rem">もっと深く整理したい方へ</p>
+<p style="font-size:13px;color:#666;line-height:1.6">個別相談で一緒に整理できます。<br>お気軽にご連絡ください。</p>
+</div>
+<div style="text-align:center;margin-top:.75rem"><button class="btn-s" style="font-size:13px" onclick="restart()">最初からやり直す</button></div>
+</div>
+
+</div>
+<footer>© MoTa. / 東春堂</footer>
+</div>
+
+<script>
+var D={s1:null,s2:[],s3:5,s4:[],s5:[],s6:[],s7:[],free:''};
+var PCTS=[12,25,38,50,63,75,87,95];
+function setProg(n){document.getElementById('pf').style.width=PCTS[n-1]+'%';}
+function initSingle(gid,key){
+  document.querySelectorAll('#'+gid+' .chip').forEach(function(el){
+    el.addEventListener('click',function(){
+      document.querySelectorAll('#'+gid+' .chip').forEach(function(e){e.classList.remove('on');});
+      el.classList.add('on');D[key]=el.getAttribute('data-v');
+    });
+  });
+}
+function initMulti(gid,key,max,cntId){
+  document.querySelectorAll('#'+gid+' .chip').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(el.classList.contains('on')){el.classList.remove('on');D[key]=D[key].filter(function(v){return v!==el.getAttribute('data-v');});}
+      else{if(D[key].length>=max)return;el.classList.add('on');D[key].push(el.getAttribute('data-v'));}
+      if(cntId)document.getElementById(cntId).textContent=D[key].length+' / '+max;
+    });
+  });
+}
+function initFree(gid,key){
+  document.querySelectorAll('#'+gid+' .chip').forEach(function(el){
+    el.addEventListener('click',function(){
+      el.classList.toggle('on');
+      var vals=[];document.querySelectorAll('#'+gid+' .chip.on').forEach(function(e){vals.push(e.getAttribute('data-v'));});D[key]=vals;
+    });
+  });
+}
+initSingle('g1','s1');initMulti('g2','s2',5,'c2');initMulti('g4','s4',5,'c4');
+initFree('g5','s5');initFree('g6','s6');initFree('g7','s7');
+document.getElementById('sat').addEventListener('input',function(){D.s3=parseInt(this.value);document.getElementById('sv').textContent=this.value;});
+document.getElementById('ft').addEventListener('input',function(){D.free=this.value;});
+function showPage(n){
+  document.querySelectorAll('.page').forEach(function(el){el.classList.remove('on');});
+  document.getElementById('p'+n).classList.add('on');setProg(n);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goNext(n){
+  var note=document.getElementById('n'+n);
+  if(n===1&&!D.s1){if(note)note.style.display='block';return;}
+  if(n===2&&D.s2.length<5){if(note)note.style.display='block';return;}
+  if(n===4&&D.s4.length<5){if(note)note.style.display='block';return;}
+  if(note)note.style.display='none';
+  showPage(n+1);
+}
+function goBack(n){showPage(n-1);}
+var QM={
+'失敗したら終わりだと思う':'小さく試すなら何ができるか？',
+'まだ準備不足だと思う':'小さく試せる形は何か？',
+'完璧にしてから動きたい':'完璧でなくても届けられる形は何か？',
+'人にどう思われるか気になる':'誰に届けたいのか？',
+'最悪の結果ばかり想像する':'うまくいったとしたら何が変わるか？',
+'自分には無理だと思いやすい':'今の自分にできる形は何か？',
+'できていない点ばかり見る':'できていることは何か？',
+'人と比べて落ち込む':'自分の基準は何か？',
+'相談する前に一人で抱える':'誰かに話したら何が変わるか？',
+'情報を集めすぎて動けない':'まず5分でできることは何か？',
+'選択肢がないように感じる':'制約をなくしたら何をしたいか？',
+'本音を後回しにする':'本音はどこにあるか？'
+};
+function makeTags(id,arr){
+  var el=document.getElementById(id);el.innerHTML='';
+  arr.forEach(function(v){var t=document.createElement('div');t.className='tag';t.textContent=v;el.appendChild(t);});
+}
+function showResult(){
+  D.free=document.getElementById('ft').value;
+  document.querySelectorAll('.page').forEach(function(el){el.classList.remove('on');});
+  document.getElementById('pr').classList.add('on');
+  document.getElementById('pf').style.width='100%';
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('rstate').textContent='あなたは今、「'+D.s1+'」状態かもしれません。';
+  makeTags('rv',D.s2);
+  var satT=D.s3<=3?'まだ十分に満たせていない状態です':D.s3<=6?'ある程度意識できている状態です':'よく満たせている状態です';
+  document.getElementById('rvi').textContent='満足度 '+D.s3+' / 10 — '+satT+'。この価値観を基準に次の選択を考えてみてください。';
+  makeTags('rs2',D.s4);
+  document.getElementById('rsi').textContent='これらの強みは、人の状況を整理してわかりやすく伝える場面で特に活かせる可能性があります。';
+  makeTags('rh',D.s5);
+  var nq=D.s5.length>0?(QM[D.s5[0]]||'次の小さな一手は何か？'):'次の小さな一手は何か？';
+  document.getElementById('rnq').textContent='変える問い：'+nq;
+  var dir='';
+  if(D.s6.length)dir+='増やしたい時間：'+D.s6.join('、')+'。';
+  if(D.s7.length)dir+=' 減らしたい時間：'+D.s7.join('、')+'。';
+  if(D.free)dir+=' 役立てそうなこと：「'+D.free+'」。';
+  dir+=' まず24時間以内に、小さく試せる形を1つ決めてみてください。';
+  document.getElementById('rd').textContent=dir;
+}
+function restart(){
+  D={s1:null,s2:[],s3:5,s4:[],s5:[],s6:[],s7:[],free:''};
+  document.querySelectorAll('.chip').forEach(function(el){el.classList.remove('on');});
+  document.getElementById('sat').value=5;document.getElementById('sv').textContent='5';
+  document.getElementById('ft').value='';
+  ['c2','c4'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent='0 / 5';});
+  ['n1','n2','n4'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display='none';});
+  showPage(1);
+}
+</script>
+</body>
+</html>
